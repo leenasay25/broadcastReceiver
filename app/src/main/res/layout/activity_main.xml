@@ -4,34 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="246dp"
-        android:layout_marginEnd="67dp"
-        android:layout_marginBottom="437dp"
-        android:onClick="smsSendMessage"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/smsMessage"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/smsMessage"
+        android:id="@+id/sms_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="247dp"
-        android:layout_marginBottom="439dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="347dp"
+        android:layout_marginEnd="146dp"
+        android:layout_marginBottom="473dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="enter text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="243dp"
+        android:layout_marginTop="114dp"
+        android:layout_marginEnd="119dp"
+        android:layout_marginBottom="311dp"
+        android:onClick="retryApp"
+        android:text="retry"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sms_message" />
+
+    <ImageButton
+        android:id="@+id/message_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="344dp"
+        android:layout_marginEnd="79dp"
+        android:layout_marginBottom="119dp"
+        android:onClick="smsSendMessage"
+        app:layout_constraintBottom_toTopOf="@+id/button_retry"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sms_message"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/stat_notify_chat" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'com.example.brodcastreciverproject'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.brodcastreciverproject"
@@ -26,6 +26,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildToolsVersion '33.0.1'
 }
 
 dependencies {

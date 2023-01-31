@@ -14,6 +14,12 @@ public class MySmsReceiver extends BroadcastReceiver {
     private static final String TAG = MySmsReceiver.class.getSimpleName();
     public static final String pdu_type = "pdus";
 
+    /**
+     * Called when the BroadcastReceiver is receiving an Intent broadcast.
+     *
+     * @param context  The Context in which the receiver is running.
+     * @param intent   The Intent received.
+     */
     @TargetApi(Build.VERSION_CODES.M)
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -26,8 +32,7 @@ public class MySmsReceiver extends BroadcastReceiver {
         Object[] pdus = (Object[]) bundle.get(pdu_type);
         if (pdus != null) {
             // Check the Android version.
-            boolean isVersionM =
-                    (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M);
+            boolean isVersionM = (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M);
             // Fill the msgs array.
             msgs = new SmsMessage[pdus.length];
             for (int i = 0; i < msgs.length; i++) {
